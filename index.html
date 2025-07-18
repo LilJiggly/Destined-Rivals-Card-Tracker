@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destined Rivals Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="light">
+    <div class="topbar">
+      <h1>Destined Rivals Card Tracker</h1>
+      <div class="topbar-controls">
+        <div class="search-and-theme">
+          <input type="text" id="searchInput" placeholder="Search cards..." />
+          <label class="switch">
+            <input type="checkbox" id="themeToggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="sort-controls">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+            <option value="number">Number</option>
+            <option value="name">Name (A-Z)</option>
+          </select>
+          <button id="ownedFilterBtn" class="owned-filter-btn">
+            Show Owned
+          </button>
+          <button id="resetFiltersBtn" class="owned-filter-btn">
+            Reset Filters
+          </button>
+        </div>
+        <div id="tagFilters">Tags:</div>
+
+        <div id="ownedCounter" class="owned-counter"></div>
+      </div>
+    </div>
+    <div id="cardsContainer" class="card-gallery"></div>
+    <footer class="site-footer">
+      <small>
+        This project is a fan-made tracker for personal use. All Pokémon names,
+        images, and trademarks are © Nintendo, Creatures Inc., GAME FREAK inc.,
+        or their respective owners. No copyright infringement intended.
+      </small>
+    </footer>
+    <button
+      id="backToTopBtn"
+      class="owned-filter-btn back-to-top"
+      title="Back to top"
+    >
+      ↑ Top
+    </button>
+    <script src="scripts.js"></script>
+  </body>
+</html>
