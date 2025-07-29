@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Destined Rivals Tracker</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
     <link rel="stylesheet" href="styles.css" />
     <!-- Firebase SDK -->
     <script type="module">
@@ -74,12 +79,10 @@
 
         <div class="modal-body">
           <div id="setupForm" class="auth-form">
-            <p class="form-description">
-              Set up your personal Pokemon card collection
-            </p>
+            <p class="form-description">Access your Pokemon card collection</p>
 
             <div class="input-group">
-              <label for="usernameInput">Choose a Username</label>
+              <label for="usernameInput">Username</label>
               <input
                 type="text"
                 id="usernameInput"
@@ -87,11 +90,13 @@
                 minlength="3"
                 required
               />
-              <small class="input-hint">Minimum 3 characters</small>
+              <small class="input-hint"
+                >Your existing username or create a new one</small
+              >
             </div>
 
             <div class="input-group">
-              <label for="passwordInput">Create a Password</label>
+              <label for="passwordInput">Password</label>
               <input
                 type="password"
                 id="passwordInput"
@@ -99,12 +104,19 @@
                 minlength="6"
                 required
               />
-              <small class="input-hint">Minimum 6 characters</small>
+              <small class="input-hint"
+                >Your existing password or create a new one (min 6
+                characters)</small
+              >
             </div>
 
             <button id="setupBtn" class="modal-btn primary">
-              🚀 Set Up My Collection
+              � Access My Collection
             </button>
+            <small class="form-note"
+              >This will sign you in if the account exists, or create a new
+              account if it doesn't.</small
+            >
           </div>
 
           <div id="loginForm" class="auth-form" style="display: none">

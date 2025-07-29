@@ -87,7 +87,7 @@ async function setupPersonalAuth() {
   );
 
   if (!credentials) {
-    // First time setup - show setup form
+    // First time setup or new device - show setup form
     showSetupForm();
     showModal();
   } else {
@@ -114,29 +114,46 @@ async function handleSetup() {
   }
 
   setupBtn.disabled = true;
-  setupBtn.textContent = "🔄 Setting up...";
+  setupBtn.textContent = "🔄 Connecting...";
+
+  // Convert username to email format for Firebase
+  const email = `${username
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "")}@pokemoncards.local`;
 
   try {
-    // Convert username to email format for Firebase
-    const email = `${username
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, "")}@pokemoncards.local`;
-
-    const { createUserWithEmailAndPassword } = await import(
+    // First try to sign in (existing account)
+    const { signInWithEmailAndPassword } = await import(
       "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"
     );
-    await createUserWithEmailAndPassword(window.auth, email, password);
+    await signInWithEmailAndPassword(window.auth, email, password);
 
-    // Store credentials securely for future use
+    // Store credentials for this device
     const credentials = { username, email, password };
     localStorage.setItem(PERSONAL_CREDENTIALS_KEY, JSON.stringify(credentials));
 
     hideModal();
-    // Success message will be handled by auth state change
-  } catch (error) {
-    alert("Setup failed: " + error.message);
-    setupBtn.disabled = false;
-    setupBtn.textContent = "🚀 Set Up My Collection";
+  } catch (signInError) {
+    // If sign in fails, try to create new account
+    try {
+      const { createUserWithEmailAndPassword } = await import(
+        "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"
+      );
+      await createUserWithEmailAndPassword(window.auth, email, password);
+
+      // Store credentials for this device
+      const credentials = { username, email, password };
+      localStorage.setItem(
+        PERSONAL_CREDENTIALS_KEY,
+        JSON.stringify(credentials)
+      );
+
+      hideModal();
+    } catch (signUpError) {
+      alert("Authentication failed: " + signUpError.message);
+      setupBtn.disabled = false;
+      setupBtn.textContent = "🔐 Access My Collection";
+    }
   }
 }
 
