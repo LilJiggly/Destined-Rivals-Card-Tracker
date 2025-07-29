@@ -430,17 +430,28 @@ function renderCards(filter = "", selectedTags = []) {
       e.stopPropagation();
       const nowOwned = !ownedCards.has(cardKey);
 
+      console.log(
+        `🔄 Button clicked for ${cardKey}: ${
+          nowOwned ? "marking as owned" : "removing from owned"
+        }`
+      );
+
       // Show loading state
       ownedBtn.disabled = true;
       ownedBtn.textContent = nowOwned ? "⏳ Marking..." : "⏳ Removing...";
 
+      console.log(`📤 Calling saveOwnedCard(${cardKey}, ${nowOwned})`);
       const success = await saveOwnedCard(cardKey, nowOwned);
+      console.log(`📥 saveOwnedCard result: ${success}`);
 
       // Reset button state - the listener will update the UI
       ownedBtn.disabled = false;
       if (!success) {
+        console.log(`❌ Save failed, reverting button`);
         // Revert on failure
         ownedBtn.textContent = nowOwned ? "Mark as Owned" : "✓ Owned";
+      } else {
+        console.log(`✅ Save successful, waiting for listener to update UI`);
       }
     });
 
@@ -471,23 +482,31 @@ function renderCards(filter = "", selectedTags = []) {
 }
 
 async function saveOwnedCard(cardKey, owned) {
+  console.log(`🔥 saveOwnedCard called: ${cardKey}, owned=${owned}`);
+
   if (!currentUser) {
+    console.log(`❌ No current user`);
     alert("Please sign in to save your collection");
     return false;
   }
 
   try {
+    console.log(`📦 Importing Firebase modules...`);
     const { doc, updateDoc, setDoc, getDoc } = await import(
       "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
     );
 
     const userDoc = doc(window.db, "users", currentUser.uid);
+    console.log(`📄 Getting current document...`);
 
     // Get current data to build complete update
     const docSnap = await getDoc(userDoc);
     let currentData = { ownedCards: {}, wishlistCards: {} };
     if (docSnap.exists()) {
       currentData = docSnap.data();
+      console.log(`📋 Current data:`, currentData);
+    } else {
+      console.log(`📋 No existing document, using empty data`);
     }
 
     // Update the specific card
@@ -495,16 +514,23 @@ async function saveOwnedCard(cardKey, owned) {
     const updatedWishlistCards = { ...currentData.wishlistCards };
 
     if (owned) {
+      console.log(`✅ Adding ${cardKey} to owned`);
       updatedOwnedCards[cardKey] = true;
       // Remove from wishlist if marking as owned
       delete updatedWishlistCards[cardKey];
       ownedCards.set(cardKey, true);
       wishlistCards.delete(cardKey);
     } else {
-      // Explicitly set to false to remove from owned
+      console.log(`❌ Removing ${cardKey} from owned`);
+      // Explicitly delete from owned
       delete updatedOwnedCards[cardKey];
       ownedCards.delete(cardKey);
     }
+
+    console.log(`💾 Saving to Firebase:`, {
+      ownedCards: updatedOwnedCards,
+      wishlistCards: updatedWishlistCards,
+    });
 
     await setDoc(
       userDoc,
@@ -515,9 +541,10 @@ async function saveOwnedCard(cardKey, owned) {
       { merge: true }
     );
 
+    console.log(`✅ Firebase save successful`);
     return true;
   } catch (error) {
-    console.error("Error saving to Firebase:", error);
+    console.error("❌ Error saving to Firebase:", error);
     alert("Failed to save: " + error.message);
     return false;
   }
