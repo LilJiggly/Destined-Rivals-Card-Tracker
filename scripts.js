@@ -223,6 +223,14 @@ async function signOut() {
   }
 }
 
+// Global variables for cards and functions
+let allCards = [];
+let getSelectedTags = null;
+let filterMode = "all";
+let ownedFilterBtn = null;
+let wishlistFilterBtn = null;
+let unownedFilterBtn = null;
+
 // Firebase real-time listener
 function setupFirestoreListener() {
   if (!currentUser || firestoreListener) return;
@@ -262,9 +270,7 @@ function setupFirestoreListener() {
             }
 
             // Update UI with new data
-            if (typeof renderCards === "function") {
-              renderCards(searchInput?.value || "", getSelectedTags?.() || []);
-            }
+            renderCards(searchInput?.value || "", getSelectedTags?.() || []);
 
             // Update sync status
             updateSyncStatus();
@@ -272,6 +278,10 @@ function setupFirestoreListener() {
             console.log(
               `Real-time update: ${ownedCards.size} owned, ${wishlistCards.size} wishlisted`
             );
+          } else {
+            // No document exists yet, render with empty data
+            renderCards(searchInput?.value || "", getSelectedTags?.() || []);
+            updateSyncStatus();
           }
         },
         (error) => {
@@ -300,6 +310,164 @@ function updateSyncStatus() {
       syncStatus.textContent = `☁️ ${credentials.username} (${ownedCards.size} owned, ${wishlistCards.size} wishlist)`;
     }
   }
+}
+
+// Global renderCards function
+function renderCards(filter = "", selectedTags = []) {
+  if (!allCards.length) return; // Wait for cards to load
+
+  cardsContainer.innerHTML = "";
+  let filtered = allCards.filter((card) => {
+    const cardKey = card.number + "_" + card.name;
+    const matchesName =
+      card.name && card.name.toLowerCase().includes(filter.toLowerCase());
+    const cardTags = Array.isArray(card.tags) ? card.tags.map((t) => t[0]) : [];
+    const matchesTags =
+      selectedTags.length === 0 ||
+      selectedTags.every((tag) => cardTags.includes(tag));
+
+    // Filter by ownership status
+    const isOwned = ownedCards.has(cardKey);
+    const isWishlisted = wishlistCards.has(cardKey);
+
+    let matchesFilter = true;
+    if (filterMode === "owned") {
+      matchesFilter = isOwned;
+    } else if (filterMode === "wishlist") {
+      matchesFilter = isWishlisted && !isOwned;
+    } else if (filterMode === "unowned") {
+      matchesFilter = !isOwned && !isWishlisted;
+    }
+
+    return matchesName && matchesTags && matchesFilter;
+  });
+
+  // Sort
+  if (sortSelect && sortSelect.value === "name") {
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    filtered.sort((a, b) => a.number - b.number);
+  }
+
+  const ownedCount = filtered.filter((card) =>
+    ownedCards.has(card.number + "_" + card.name)
+  ).length;
+  const wishlistCount = filtered.filter(
+    (card) =>
+      wishlistCards.has(card.number + "_" + card.name) &&
+      !ownedCards.has(card.number + "_" + card.name)
+  ).length;
+
+  if (ownedCounter) {
+    ownedCounter.textContent = `Owned: ${ownedCount} | Wishlist: ${wishlistCount} | Total: ${filtered.length}`;
+  }
+
+  filtered.forEach((card) => {
+    const cardKey = card.number + "_" + card.name;
+    const div = document.createElement("div");
+    div.className = "card";
+    const owned = ownedCards.has(cardKey);
+    const wishlisted = wishlistCards.has(cardKey);
+
+    if (owned) {
+      div.classList.add("owned");
+    } else if (wishlisted) {
+      div.classList.add("wishlisted");
+    }
+
+    if (card.imageUrl) {
+      const img = document.createElement("img");
+      img.src = card.imageUrl;
+      img.alt = card.name || "";
+      div.appendChild(img);
+    }
+
+    const name = document.createElement("p");
+    name.textContent = card.name || "No Name";
+    div.appendChild(name);
+
+    // Show tags
+    if (Array.isArray(card.tags)) {
+      const tagsDiv = document.createElement("div");
+      tagsDiv.textContent = card.tags.map((t) => t[0]).join(", ");
+      div.appendChild(tagsDiv);
+    }
+
+    // Card number (e.g., 12/244)
+    const numberDiv = document.createElement("div");
+    numberDiv.className = "card-number";
+    numberDiv.textContent = `${card.number}/182`;
+    div.appendChild(numberDiv);
+
+    // Status buttons container
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.className = "card-buttons";
+
+    // Owned button
+    const ownedBtn = document.createElement("button");
+    ownedBtn.className = "card-btn owned-btn";
+    ownedBtn.textContent = owned ? "✓ Owned" : "Mark as Owned";
+    if (owned) ownedBtn.classList.add("active");
+
+    // Wishlist button
+    const wishlistBtn = document.createElement("button");
+    wishlistBtn.className = "card-btn wishlist-btn";
+    wishlistBtn.textContent = wishlisted
+      ? "⭐ Wishlisted"
+      : "⭐ Add to Wishlist";
+    if (wishlisted) wishlistBtn.classList.add("active");
+
+    // Only show wishlist button if not owned
+    if (!owned) {
+      buttonsContainer.appendChild(wishlistBtn);
+    }
+    buttonsContainer.appendChild(ownedBtn);
+
+    div.appendChild(buttonsContainer);
+
+    // Button click handlers
+    ownedBtn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const nowOwned = !ownedCards.has(cardKey);
+
+      // Show loading state
+      ownedBtn.disabled = true;
+      ownedBtn.textContent = nowOwned ? "⏳ Marking..." : "⏳ Removing...";
+
+      const success = await saveOwnedCard(cardKey, nowOwned);
+
+      // Reset button state - the listener will update the UI
+      ownedBtn.disabled = false;
+      if (!success) {
+        // Revert on failure
+        ownedBtn.textContent = nowOwned ? "Mark as Owned" : "✓ Owned";
+      }
+    });
+
+    wishlistBtn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const nowWishlisted = !wishlistCards.has(cardKey);
+
+      // Show loading state
+      wishlistBtn.disabled = true;
+      wishlistBtn.textContent = nowWishlisted
+        ? "⏳ Adding..."
+        : "⏳ Removing...";
+
+      const success = await saveWishlistCard(cardKey, nowWishlisted);
+
+      // Reset button state - the listener will update the UI
+      wishlistBtn.disabled = false;
+      if (!success) {
+        // Revert on failure
+        wishlistBtn.textContent = nowWishlisted
+          ? "⭐ Add to Wishlist"
+          : "⭐ Wishlisted";
+      }
+    });
+
+    cardsContainer.appendChild(div);
+  });
 }
 
 async function saveOwnedCard(cardKey, owned) {
@@ -485,6 +653,8 @@ if (loginPasswordInput) {
 fetch("cards.json")
   .then((res) => res.json())
   .then((cards) => {
+    // Store cards globally
+    allCards = cards;
     // Collect all unique tags
     const tagSet = new Set();
     cards.forEach((card) => {
@@ -498,15 +668,16 @@ fetch("cards.json")
     // Group tags and populate checkboxes
     renderTagFiltersWithGroups(Array.from(tagSet));
 
-    function getSelectedTags() {
+    // Set up global functions and variables
+    getSelectedTags = function () {
       return Array.from(document.querySelectorAll(".tag-checkbox:checked")).map(
         (cb) => cb.value
       );
-    }
-    const ownedFilterBtn = document.getElementById("ownedFilterBtn");
-    const wishlistFilterBtn = document.getElementById("wishlistFilterBtn");
-    const unownedFilterBtn = document.getElementById("unownedFilterBtn");
-    let filterMode = "all"; // "all", "owned", "wishlist", "unowned"
+    };
+
+    ownedFilterBtn = document.getElementById("ownedFilterBtn");
+    wishlistFilterBtn = document.getElementById("wishlistFilterBtn");
+    unownedFilterBtn = document.getElementById("unownedFilterBtn");
 
     if (ownedFilterBtn) {
       ownedFilterBtn.addEventListener("click", () => {
