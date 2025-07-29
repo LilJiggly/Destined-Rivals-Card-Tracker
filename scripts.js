@@ -229,6 +229,17 @@ async function syncOwnedCards() {
       "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
     );
     const userDoc = doc(window.db, "users", currentUser.uid);
+
+    // First, collect all local owned cards
+    const localOwnedCards = new Map();
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.includes("_") && localStorage.getItem(key) === "true") {
+        localOwnedCards.set(key, true);
+        ownedCards.set(key, true);
+      }
+    }
+
     const docSnap = await getDoc(userDoc);
 
     if (docSnap.exists()) {
@@ -243,6 +254,12 @@ async function syncOwnedCards() {
         });
       }
     }
+
+    // Save the merged data back to Firebase
+    const ownedCardsObj = Object.fromEntries(ownedCards);
+    await setDoc(userDoc, { ownedCards: ownedCardsObj }, { merge: true });
+
+    console.log(`Synced ${ownedCards.size} owned cards to Firebase`);
   } catch (error) {
     console.error("Error syncing owned cards:", error);
   }
