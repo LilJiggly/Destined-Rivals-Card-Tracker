@@ -29,8 +29,9 @@ const loginBtn = document.getElementById("loginBtn");
 const resetCredentialsBtn = document.getElementById("resetCredentialsBtn");
 
 let currentUser = null;
-let ownedCards = new Map(); // Local cache
-let wishlistCards = new Map(); // Wishlist cache
+let ownedCards = new Map(); // Firebase data cache
+let wishlistCards = new Map(); // Firebase wishlist cache
+let firestoreListener = null; // Real-time listener
 
 // Theme toggle
 if (themeToggle) {
@@ -222,63 +223,109 @@ async function signOut() {
   }
 }
 
-// Firebase data functions
-async function syncOwnedCards() {
-  if (!currentUser) return;
+// Firebase real-time listener
+function setupFirestoreListener() {
+  if (!currentUser || firestoreListener) return;
+
+  import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js")
+    .then((module) => {
+      const userDoc = module.doc(window.db, "users", currentUser.uid);
+
+      firestoreListener = module.onSnapshot(
+        userDoc,
+        (docSnap) => {
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+
+            // Clear current data
+            ownedCards.clear();
+            wishlistCards.clear();
+
+            // Load owned cards from Firebase
+            if (data.ownedCards) {
+              Object.entries(data.ownedCards).forEach(([cardKey, owned]) => {
+                if (owned) {
+                  ownedCards.set(cardKey, true);
+                }
+              });
+            }
+
+            // Load wishlist cards from Firebase
+            if (data.wishlistCards) {
+              Object.entries(data.wishlistCards).forEach(
+                ([cardKey, wishlisted]) => {
+                  if (wishlisted) {
+                    wishlistCards.set(cardKey, true);
+                  }
+                }
+              );
+            }
+
+            // Update UI with new data
+            if (typeof renderCards === "function") {
+              renderCards(searchInput?.value || "", getSelectedTags?.() || []);
+            }
+
+            // Update sync status
+            updateSyncStatus();
+
+            console.log(
+              `Real-time update: ${ownedCards.size} owned, ${wishlistCards.size} wishlisted`
+            );
+          }
+        },
+        (error) => {
+          console.error("Firestore listener error:", error);
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error setting up Firestore listener:", error);
+    });
+}
+
+function removeFirestoreListener() {
+  if (firestoreListener) {
+    firestoreListener();
+    firestoreListener = null;
+  }
+}
+
+function updateSyncStatus() {
+  if (syncStatus && currentUser) {
+    const credentials = JSON.parse(
+      localStorage.getItem(PERSONAL_CREDENTIALS_KEY) || "null"
+    );
+    if (credentials && credentials.username) {
+      syncStatus.textContent = `☁️ ${credentials.username} (${ownedCards.size} owned, ${wishlistCards.size} wishlist)`;
+    }
+  }
+}
+
+async function saveOwnedCard(cardKey, owned) {
+  if (!currentUser) {
+    alert("Please sign in to save your collection");
+    return false;
+  }
 
   try {
-    const { doc, getDoc, setDoc } = await import(
+    const { doc, setDoc } = await import(
       "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
     );
+
+    // Update local cache immediately for UI responsiveness
+    if (owned) {
+      ownedCards.set(cardKey, true);
+      // Remove from wishlist if marking as owned
+      wishlistCards.delete(cardKey);
+    } else {
+      ownedCards.delete(cardKey);
+    }
+
     const userDoc = doc(window.db, "users", currentUser.uid);
-
-    // First, collect all local owned and wishlist cards
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (
-        key &&
-        key.includes("_") &&
-        !key.includes("_wishlist") &&
-        localStorage.getItem(key) === "true"
-      ) {
-        ownedCards.set(key, true);
-      } else if (
-        key &&
-        key.includes("_wishlist") &&
-        localStorage.getItem(key) === "true"
-      ) {
-        const cardKey = key.replace("_wishlist", "");
-        wishlistCards.set(cardKey, true);
-      }
-    }
-
-    const docSnap = await getDoc(userDoc);
-
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      if (data.ownedCards) {
-        // Merge Firebase owned data with local data
-        Object.entries(data.ownedCards).forEach(([cardKey, owned]) => {
-          if (owned) {
-            ownedCards.set(cardKey, true);
-            localStorage.setItem(cardKey, "true");
-          }
-        });
-      }
-      if (data.wishlistCards) {
-        // Merge Firebase wishlist data with local data
-        Object.entries(data.wishlistCards).forEach(([cardKey, wishlisted]) => {
-          if (wishlisted) {
-            wishlistCards.set(cardKey, true);
-            localStorage.setItem(cardKey + "_wishlist", "true");
-          }
-        });
-      }
-    }
-
-    // Save the merged data back to Firebase
     const ownedCardsObj = Object.fromEntries(ownedCards);
     const wishlistCardsObj = Object.fromEntries(wishlistCards);
+
     await setDoc(
       userDoc,
       {
@@ -288,57 +335,42 @@ async function syncOwnedCards() {
       { merge: true }
     );
 
-    console.log(`Synced ${ownedCards.size} owned cards to Firebase`);
+    return true;
   } catch (error) {
-    console.error("Error syncing owned cards:", error);
-  }
-}
-
-async function saveOwnedCard(cardKey, owned) {
-  if (owned) {
-    ownedCards.set(cardKey, true);
-  } else {
-    ownedCards.delete(cardKey);
-  }
-
-  localStorage.setItem(cardKey, owned.toString());
-
-  if (currentUser) {
-    try {
-      const { doc, setDoc } = await import(
-        "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
-      );
-      const userDoc = doc(window.db, "users", currentUser.uid);
-      const ownedCardsObj = Object.fromEntries(ownedCards);
-      await setDoc(userDoc, { ownedCards: ownedCardsObj }, { merge: true });
-    } catch (error) {
-      console.error("Error saving to Firebase:", error);
-    }
+    console.error("Error saving to Firebase:", error);
+    alert("Failed to save: " + error.message);
+    return false;
   }
 }
 
 async function saveWishlistCard(cardKey, wishlisted) {
-  if (wishlisted) {
-    wishlistCards.set(cardKey, true);
-  } else {
-    wishlistCards.delete(cardKey);
+  if (!currentUser) {
+    alert("Please sign in to save your wishlist");
+    return false;
   }
 
-  if (currentUser) {
-    try {
-      const { doc, setDoc } = await import(
-        "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
-      );
-      const userDoc = doc(window.db, "users", currentUser.uid);
-      const wishlistCardsObj = Object.fromEntries(wishlistCards);
-      await setDoc(
-        userDoc,
-        { wishlistCards: wishlistCardsObj },
-        { merge: true }
-      );
-    } catch (error) {
-      console.error("Error saving wishlist to Firebase:", error);
+  try {
+    const { doc, setDoc } = await import(
+      "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
+    );
+
+    // Update local cache immediately for UI responsiveness
+    if (wishlisted) {
+      wishlistCards.set(cardKey, true);
+    } else {
+      wishlistCards.delete(cardKey);
     }
+
+    const userDoc = doc(window.db, "users", currentUser.uid);
+    const wishlistCardsObj = Object.fromEntries(wishlistCards);
+
+    await setDoc(userDoc, { wishlistCards: wishlistCardsObj }, { merge: true });
+
+    return true;
+  } catch (error) {
+    console.error("Error saving wishlist to Firebase:", error);
+    alert("Failed to save wishlist: " + error.message);
+    return false;
   }
 }
 
@@ -352,34 +384,28 @@ async function manualSave() {
   saveBtn.textContent = "💾 Saving...";
 
   try {
-    // Collect all local owned cards
-    const localOwnedCards = new Map();
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.includes("_") && localStorage.getItem(key) === "true") {
-        localOwnedCards.set(key, true);
-        ownedCards.set(key, true);
-      }
-    }
-
     const { doc, setDoc } = await import(
       "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
     );
+
     const userDoc = doc(window.db, "users", currentUser.uid);
     const ownedCardsObj = Object.fromEntries(ownedCards);
-    await setDoc(userDoc, { ownedCards: ownedCardsObj }, { merge: true });
+    const wishlistCardsObj = Object.fromEntries(wishlistCards);
 
-    // Update sync status
-    if (syncStatus) {
-      const credentials = JSON.parse(
-        localStorage.getItem(PERSONAL_CREDENTIALS_KEY) || "null"
-      );
-      syncStatus.textContent = `☁️ ${credentials?.username || "Synced"} (${
-        ownedCards.size
-      } cards)`;
-    }
+    await setDoc(
+      userDoc,
+      {
+        ownedCards: ownedCardsObj,
+        wishlistCards: wishlistCardsObj,
+      },
+      { merge: true }
+    );
 
-    alert(`✅ Successfully saved ${ownedCards.size} owned cards to cloud!`);
+    updateSyncStatus();
+
+    alert(
+      `✅ Successfully saved ${ownedCards.size} owned cards and ${wishlistCards.size} wishlist cards to cloud!`
+    );
   } catch (error) {
     console.error("Error during manual save:", error);
     alert("❌ Save failed: " + error.message);
@@ -403,32 +429,17 @@ window.addEventListener("load", async () => {
       authSection.style.display = "none";
       userInfo.style.display = "flex";
 
-      // Show username in sync status
-      const credentials = JSON.parse(
-        localStorage.getItem(PERSONAL_CREDENTIALS_KEY) || "null"
-      );
-      if (credentials && credentials.username && syncStatus) {
-        // Count owned cards
-        let ownedCount = 0;
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-          if (
-            key &&
-            key.includes("_") &&
-            localStorage.getItem(key) === "true"
-          ) {
-            ownedCount++;
-          }
-        }
-        syncStatus.textContent = `☁️ ${credentials.username} (${ownedCount} cards)`;
-      }
+      // Initial sync status will be updated by the Firestore listener
+      updateSyncStatus();
 
-      syncOwnedCards();
+      setupFirestoreListener();
     } else {
       // User is signed out
       authSection.style.display = "flex";
       userInfo.style.display = "none";
+      removeFirestoreListener();
       ownedCards.clear();
+      wishlistCards.clear();
     }
   });
 });
@@ -564,9 +575,8 @@ fetch("cards.json")
           selectedTags.every((tag) => cardTags.includes(tag));
 
         // Filter by ownership status
-        const isOwned = localStorage.getItem(cardKey) === "true";
-        const isWishlisted =
-          localStorage.getItem(cardKey + "_wishlist") === "true";
+        const isOwned = ownedCards.has(cardKey);
+        const isWishlisted = wishlistCards.has(cardKey);
 
         let matchesFilter = true;
         if (filterMode === "owned") {
@@ -587,14 +597,13 @@ fetch("cards.json")
         filtered.sort((a, b) => a.number - b.number);
       }
 
-      const ownedCount = filtered.filter(
-        (card) => localStorage.getItem(card.number + "_" + card.name) === "true"
+      const ownedCount = filtered.filter((card) =>
+        ownedCards.has(card.number + "_" + card.name)
       ).length;
       const wishlistCount = filtered.filter(
         (card) =>
-          localStorage.getItem(card.number + "_" + card.name + "_wishlist") ===
-            "true" &&
-          localStorage.getItem(card.number + "_" + card.name) !== "true"
+          wishlistCards.has(card.number + "_" + card.name) &&
+          !ownedCards.has(card.number + "_" + card.name)
       ).length;
 
       if (ownedCounter) {
@@ -606,8 +615,8 @@ fetch("cards.json")
         const wishlistKey = cardKey + "_wishlist";
         const div = document.createElement("div");
         div.className = "card";
-        const owned = localStorage.getItem(cardKey) === "true";
-        const wishlisted = localStorage.getItem(wishlistKey) === "true";
+        const owned = ownedCards.has(cardKey);
+        const wishlisted = wishlistCards.has(cardKey);
 
         if (owned) {
           div.classList.add("owned");
@@ -668,22 +677,42 @@ fetch("cards.json")
         // Button click handlers
         ownedBtn.addEventListener("click", async (e) => {
           e.stopPropagation();
-          const nowOwned = !(localStorage.getItem(cardKey) === "true");
-          await saveOwnedCard(cardKey, nowOwned);
-          // If marking as owned, remove from wishlist
-          if (nowOwned) {
-            localStorage.setItem(wishlistKey, "false");
-            await saveWishlistCard(cardKey, false);
+          const nowOwned = !ownedCards.has(cardKey);
+
+          // Show loading state
+          ownedBtn.disabled = true;
+          ownedBtn.textContent = nowOwned ? "⏳ Marking..." : "⏳ Removing...";
+
+          const success = await saveOwnedCard(cardKey, nowOwned);
+
+          // Reset button state
+          ownedBtn.disabled = false;
+          if (!success) {
+            // Revert on failure
+            ownedBtn.textContent = nowOwned ? "Mark as Owned" : "✓ Owned";
           }
-          renderCards(filter, selectedTags);
         });
 
         wishlistBtn.addEventListener("click", async (e) => {
           e.stopPropagation();
-          const nowWishlisted = !(localStorage.getItem(wishlistKey) === "true");
-          localStorage.setItem(wishlistKey, nowWishlisted.toString());
-          await saveWishlistCard(cardKey, nowWishlisted);
-          renderCards(filter, selectedTags);
+          const nowWishlisted = !wishlistCards.has(cardKey);
+
+          // Show loading state
+          wishlistBtn.disabled = true;
+          wishlistBtn.textContent = nowWishlisted
+            ? "⏳ Adding..."
+            : "⏳ Removing...";
+
+          const success = await saveWishlistCard(cardKey, nowWishlisted);
+
+          // Reset button state
+          wishlistBtn.disabled = false;
+          if (!success) {
+            // Revert on failure
+            wishlistBtn.textContent = nowWishlisted
+              ? "⭐ Add to Wishlist"
+              : "⭐ Wishlisted";
+          }
         });
 
         cardsContainer.appendChild(div);
