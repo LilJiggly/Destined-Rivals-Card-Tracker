@@ -1,0 +1,1466 @@
+[
+  {
+    "name": "Ethan's Pinsir",
+    "number": 1,
+    "imageUrl": "images/imgi_256_SV10_EN_1-2x.webp",
+    "tags": [["Ethan"], ["Grass"]]
+  },
+  {
+    "name": "Yanma",
+    "number": 2,
+    "imageUrl": "images/imgi_257_SV10_EN_2-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Yanmega EX",
+    "number": 3,
+    "imageUrl": "images/imgi_258_SV10_EN_3-2x.webp",
+    "tags": [["EX"], ["Grass"]]
+  },
+  {
+    "name": "Pineco",
+    "number": 4,
+    "imageUrl": "images/imgi_259_SV10_EN_4-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Shroomish",
+    "number": 5,
+    "imageUrl": "images/imgi_260_SV10_EN_5-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Breloom",
+    "number": 6,
+    "imageUrl": "images/imgi_261_SV10_EN_6-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Cynthia's Roselia",
+    "number": 7,
+    "imageUrl": "images/imgi_262_SV10_EN_7-2x.webp",
+    "tags": [["Cynthia"], ["Grass"]]
+  },
+  {
+    "name": "Cynthia's Roserade",
+    "number": 8,
+    "imageUrl": "images/imgi_263_SV10_EN_8-2x.webp",
+    "tags": [["Cynthia"], ["Grass"]]
+  },
+  {
+    "name": "Mow Rotom",
+    "number": 9,
+    "imageUrl": "images/imgi_264_SV10_EN_9-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Shaymin",
+    "number": 10,
+    "imageUrl": "images/imgi_265_SV10_EN_10-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Dwebble",
+    "number": 11,
+    "imageUrl": "images/imgi_266_SV10_EN_11-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Crustle",
+    "number": 12,
+    "imageUrl": "images/imgi_267_SV10_EN_12-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Fomantis",
+    "number": 13,
+    "imageUrl": "images/imgi_268_SV10_EN_13-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Lurantis",
+    "number": 14,
+    "imageUrl": "images/imgi_269_SV10_EN_14-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Team Rocket's Blipbug",
+    "number": 15,
+    "imageUrl": "images/imgi_270_SV10_EN_15-2x.webp",
+    "tags": [["Team Rocket"], ["Grass"]]
+  },
+  {
+    "name": "Applin",
+    "number": 16,
+    "imageUrl": "images/imgi_271_SV10_EN_16-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Dipplin",
+    "number": 17,
+    "imageUrl": "images/imgi_272_SV10_EN_17-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Hydrapple",
+    "number": 18,
+    "imageUrl": "images/imgi_273_SV10_EN_18-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Team Rocket's Tarountula",
+    "number": 19,
+    "imageUrl": "images/imgi_274_SV10_EN_19-2x.webp",
+    "tags": [["Team Rocket"], ["Grass"]]
+  },
+  {
+    "name": "Team Rocket's Spidops",
+    "number": 20,
+    "imageUrl": "images/imgi_275_SV10_EN_20-2x.webp",
+    "tags": [["Team Rocket"], ["Grass"]]
+  },
+  {
+    "name": "Smoliv",
+    "number": 21,
+    "imageUrl": "images/imgi_276_SV10_EN_21-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Dolliv",
+    "number": 22,
+    "imageUrl": "images/imgi_277_SV10_EN_22-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Arboliva EX",
+    "number": 23,
+    "imageUrl": "images/imgi_278_SV10_EN_23-2x.webp",
+    "tags": [["EX"], ["Grass"]]
+  },
+  {
+    "name": "Rellor",
+    "number": 24,
+    "imageUrl": "images/imgi_279_SV10_EN_24-2x.webp",
+    "tags": [["Grass"]]
+  },
+  {
+    "name": "Rabsca EX",
+    "number": 25,
+    "imageUrl": "images/imgi_280_SV10_EN_25-2x.webp",
+    "tags": [["EX"], ["Grass"]]
+  },
+  {
+    "name": "Teal Mask Ogerpon",
+    "number": 26,
+    "imageUrl": "images/imgi_281_SV10_EN_26-2x.webp",
+    "tags": [["Mask"], ["Grass"]]
+  },
+  {
+    "name": "Growlithe",
+    "number": 27,
+    "imageUrl": "images/imgi_282_SV10_EN_27-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Arcanine",
+    "number": 28,
+    "imageUrl": "images/imgi_283_SV10_EN_28-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Ponyta",
+    "number": 29,
+    "imageUrl": "images/imgi_284_SV10_EN_29-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Rapidash",
+    "number": 30,
+    "imageUrl": "images/imgi_285_SV10_EN_30-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Team Rocket's Moltres EX",
+    "number": 31,
+    "imageUrl": "images/imgi_286_SV10_EN_31-2x.webp",
+    "tags": [["Team Rocket"], ["EX"]]
+  },
+  {
+    "name": "Ethan's Cyndaquil",
+    "number": 32,
+    "imageUrl": "images/imgi_287_SV10_EN_32-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Ethan's Quilava",
+    "number": 33,
+    "imageUrl": "images/imgi_288_SV10_EN_33-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Ethan's Typhlosion",
+    "number": 34,
+    "imageUrl": "images/imgi_289_SV10_EN_34-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Ethan's Slugma",
+    "number": 35,
+    "imageUrl": "images/imgi_290_SV10_EN_35-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Ethan's Magcargo",
+    "number": 36,
+    "imageUrl": "images/imgi_291_SV10_EN_36-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Team Rocket's Houndour",
+    "number": 37,
+    "imageUrl": "images/imgi_292_SV10_EN_37-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Houndoom",
+    "number": 38,
+    "imageUrl": "images/imgi_293_SV10_EN_38-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Ethan's Ho-Oh EX",
+    "number": 39,
+    "imageUrl": "images/imgi_294_SV10_EN_39-2x.webp",
+    "tags": [["Ethan"], ["EX"]]
+  },
+  {
+    "name": "Torchic",
+    "number": 40,
+    "imageUrl": "images/imgi_295_SV10_EN_40-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Combusken",
+    "number": 41,
+    "imageUrl": "images/imgi_296_SV10_EN_41-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Blaziken",
+    "number": 42,
+    "imageUrl": "images/imgi_297_SV10_EN_42-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Heat Rotom",
+    "number": 43,
+    "imageUrl": "images/imgi_298_SV10_EN_43-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Hearthflame Mask Ogerpon",
+    "number": 44,
+    "imageUrl": "images/imgi_299_SV10_EN_44-2x.webp",
+    "tags": [["Mask"]]
+  },
+  {
+    "name": "Misty's Psyduck",
+    "number": 45,
+    "imageUrl": "images/imgi_300_SV10_EN_45-2x.webp",
+    "tags": [["Misty"]]
+  },
+  {
+    "name": "Misty's Staryu",
+    "number": 46,
+    "imageUrl": "images/imgi_301_SV10_EN_46-2x.webp",
+    "tags": [["Misty"]]
+  },
+  {
+    "name": "Misty's Starmie",
+    "number": 47,
+    "imageUrl": "images/imgi_302_SV10_EN_47-2x.webp",
+    "tags": [["Misty"]]
+  },
+  {
+    "name": "Misty's Magikarp",
+    "number": 48,
+    "imageUrl": "images/imgi_303_SV10_EN_48-2x.webp",
+    "tags": [["Misty"]]
+  },
+  {
+    "name": "Misty's Gyarados",
+    "number": 49,
+    "imageUrl": "images/imgi_304_SV10_EN_49-2x.webp",
+    "tags": [["Misty"]]
+  },
+  {
+    "name": "Misty's Lapras",
+    "number": 50,
+    "imageUrl": "images/imgi_305_SV10_EN_50-2x.webp",
+    "tags": [["Misty"]]
+  },
+  {
+    "name": "Team Rocket's Articuno",
+    "number": 51,
+    "imageUrl": "images/imgi_306_SV10_EN_51-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Cynthia's Feebas",
+    "number": 52,
+    "imageUrl": "images/imgi_307_SV10_EN_52-2x.webp",
+    "tags": [["Cynthia"]]
+  },
+  {
+    "name": "Cynthia's Milotic",
+    "number": 53,
+    "imageUrl": "images/imgi_308_SV10_EN_53-2x.webp",
+    "tags": [["Cynthia"]]
+  },
+  {
+    "name": "Clamperl",
+    "number": 54,
+    "imageUrl": "images/imgi_309_SV10_EN_54-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Huntail",
+    "number": 55,
+    "imageUrl": "images/imgi_310_SV10_EN_55-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Gorebyss",
+    "number": 56,
+    "imageUrl": "images/imgi_311_SV10_EN_56-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Buizel",
+    "number": 57,
+    "imageUrl": "images/imgi_312_SV10_EN_57-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Floatzel",
+    "number": 58,
+    "imageUrl": "images/imgi_313_SV10_EN_58-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Snover",
+    "number": 59,
+    "imageUrl": "images/imgi_314_SV10_EN_59-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Abomasnow",
+    "number": 60,
+    "imageUrl": "images/imgi_315_SV10_EN_60-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Wash Rotom",
+    "number": 61,
+    "imageUrl": "images/imgi_316_SV10_EN_61-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Arrokuda",
+    "number": 62,
+    "imageUrl": "images/imgi_317_SV10_EN_62-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Barraskewda",
+    "number": 63,
+    "imageUrl": "images/imgi_318_SV10_EN_63-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Cetoddle",
+    "number": 64,
+    "imageUrl": "images/imgi_319_SV10_EN_64-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Cetitan EX",
+    "number": 65,
+    "imageUrl": "images/imgi_320_SV10_EN_65-2x.webp",
+    "tags": [["EX"]]
+  },
+  {
+    "name": "Dondozo EX",
+    "number": 66,
+    "imageUrl": "images/imgi_321_SV10_EN_66-2x.webp",
+    "tags": [["EX"]]
+  },
+  {
+    "name": "Wellspring Mask Ogerpon",
+    "number": 67,
+    "imageUrl": "images/imgi_322_SV10_EN_67-2x.webp",
+    "tags": [["Mask"]]
+  },
+  {
+    "name": "Electabuzz",
+    "number": 68,
+    "imageUrl": "images/imgi_323_SV10_EN_68-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Electivire EX",
+    "number": 69,
+    "imageUrl": "images/imgi_324_SV10_EN_69-2x.webp",
+    "tags": [["EX"]]
+  },
+  {
+    "name": "Team Rocket's Zapdos",
+    "number": 70,
+    "imageUrl": "images/imgi_325_SV10_EN_70-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Ethan's Pichu",
+    "number": 71,
+    "imageUrl": "images/imgi_326_SV10_EN_71-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Team Rocket's Mareep",
+    "number": 72,
+    "imageUrl": "images/imgi_327_SV10_EN_72-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Flaaffy",
+    "number": 73,
+    "imageUrl": "images/imgi_328_SV10_EN_73-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Ampharos",
+    "number": 74,
+    "imageUrl": "images/imgi_329_SV10_EN_74-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Electrike",
+    "number": 75,
+    "imageUrl": "images/imgi_330_SV10_EN_75-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Manectric",
+    "number": 76,
+    "imageUrl": "images/imgi_331_SV10_EN_76-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Rotom",
+    "number": 77,
+    "imageUrl": "images/imgi_332_SV10_EN_77-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Zeraora",
+    "number": 78,
+    "imageUrl": "images/imgi_333_SV10_EN_78-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Team Rocket's Drowzee",
+    "number": 79,
+    "imageUrl": "images/imgi_334_SV10_EN_79-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Hypno",
+    "number": 80,
+    "imageUrl": "images/imgi_335_SV10_EN_80-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Mewtwo EX",
+    "number": 81,
+    "imageUrl": "images/imgi_336_SV10_EN_81-2x.webp",
+    "tags": [["Team Rocket"], ["EX"]]
+  },
+  {
+    "name": "Team Rocket's Wobbuffet",
+    "number": 82,
+    "imageUrl": "images/imgi_337_SV10_EN_82-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Steven's Baltoy",
+    "number": 83,
+    "imageUrl": "images/imgi_338_SV10_EN_83-2x.webp",
+    "tags": [["Steven"]]
+  },
+  {
+    "name": "Steven's Claydol",
+    "number": 84,
+    "imageUrl": "images/imgi_339_SV10_EN_84-2x.webp",
+    "tags": [["Steven"]]
+  },
+  {
+    "name": "Team Rocket's Chingling",
+    "number": 85,
+    "imageUrl": "images/imgi_340_SV10_EN_85-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Steven's Carbink",
+    "number": 86,
+    "imageUrl": "images/imgi_341_SV10_EN_86-2x.webp",
+    "tags": [["Steven"]]
+  },
+  {
+    "name": "Team Rocket's Mimikyu",
+    "number": 87,
+    "imageUrl": "images/imgi_342_SV10_EN_87-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Dottler",
+    "number": 88,
+    "imageUrl": "images/imgi_343_SV10_EN_88-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Orbeetle",
+    "number": 89,
+    "imageUrl": "images/imgi_344_SV10_EN_89-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Mankey",
+    "number": 90,
+    "imageUrl": "images/imgi_345_SV10_EN_90-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Primeape",
+    "number": 91,
+    "imageUrl": "images/imgi_346_SV10_EN_91-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Annihilape",
+    "number": 92,
+    "imageUrl": "images/imgi_347_SV10_EN_92-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Ethan's Sudowoodo",
+    "number": 93,
+    "imageUrl": "images/imgi_348_SV10_EN_93-2x.webp",
+    "tags": [["Ethan"]]
+  },
+  {
+    "name": "Team Rocket's Larvitar",
+    "number": 94,
+    "imageUrl": "images/imgi_349_SV10_EN_94-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Pupitar",
+    "number": 95,
+    "imageUrl": "images/imgi_350_SV10_EN_95-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Tyranitar",
+    "number": 96,
+    "imageUrl": "images/imgi_351_SV10_EN_96-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Nosepass",
+    "number": 97,
+    "imageUrl": "images/imgi_352_SV10_EN_97-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Probopass",
+    "number": 98,
+    "imageUrl": "images/imgi_353_SV10_EN_98-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Meditite",
+    "number": 99,
+    "imageUrl": "images/imgi_354_SV10_EN_99-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Medicham",
+    "number": 100,
+    "imageUrl": "images/imgi_355_SV10_EN_100-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Regirock EX",
+    "number": 101,
+    "imageUrl": "images/imgi_356_SV10_EN_101-2x.webp",
+    "tags": [["EX"]]
+  },
+  {
+    "name": "Cynthia's Gible",
+    "number": 102,
+    "imageUrl": "images/imgi_357_SV10_EN_102-2x.webp",
+    "tags": [["Cynthia"]]
+  },
+  {
+    "name": "Cynthia's Gabite",
+    "number": 103,
+    "imageUrl": "images/imgi_358_SV10_EN_103-2x.webp",
+    "tags": [["Cynthia"]]
+  },
+  {
+    "name": "Cynthia's Garchomp EX",
+    "number": 104,
+    "imageUrl": "images/imgi_359_SV10_EN_104-2x.webp",
+    "tags": [["Cynthia"], ["EX"]]
+  },
+  {
+    "name": "Hippopotas",
+    "number": 105,
+    "imageUrl": "images/imgi_360_SV10_EN_105-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Hippowdon",
+    "number": 106,
+    "imageUrl": "images/imgi_361_SV10_EN_106-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Mudbray",
+    "number": 107,
+    "imageUrl": "images/imgi_362_SV10_EN_107-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Mudsdale",
+    "number": 108,
+    "imageUrl": "images/imgi_363_SV10_EN_108-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Arven's Toedscool",
+    "number": 109,
+    "imageUrl": "images/imgi_364_SV10_EN_109-2x.webp",
+    "tags": [["Arven"]]
+  },
+  {
+    "name": "Arven's Toedscruel",
+    "number": 110,
+    "imageUrl": "images/imgi_365_SV10_EN_110-2x.webp",
+    "tags": [["Arven"]]
+  },
+  {
+    "name": "Cornerstone Mask Ogerpon",
+    "number": 111,
+    "imageUrl": "images/imgi_366_SV10_EN_111-2x.webp",
+    "tags": [["Mask"]]
+  },
+  {
+    "name": "Team Rocket's Ekans",
+    "number": 112,
+    "imageUrl": "images/imgi_367_SV10_EN_112-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Arbok",
+    "number": 113,
+    "imageUrl": "images/imgi_368_SV10_EN_113-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Nidoran♀",
+    "number": 114,
+    "imageUrl": "images/imgi_369_SV10_EN_114-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Nidorina",
+    "number": 115,
+    "imageUrl": "images/imgi_370_SV10_EN_115-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Nidoqueen",
+    "number": 116,
+    "imageUrl": "images/imgi_371_SV10_EN_116-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Nidoran♂",
+    "number": 117,
+    "imageUrl": "images/imgi_372_SV10_EN_117-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Nidorino",
+    "number": 118,
+    "imageUrl": "images/imgi_373_SV10_EN_118-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Nidoking EX",
+    "number": 119,
+    "imageUrl": "images/imgi_374_SV10_EN_119-2x.webp",
+    "tags": [["Team Rocket"], ["EX"]]
+  },
+  {
+    "name": "Team Rocket's Zubat",
+    "number": 120,
+    "imageUrl": "images/imgi_375_SV10_EN_120-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Golbat",
+    "number": 121,
+    "imageUrl": "images/imgi_376_SV10_EN_121-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Crobat EX",
+    "number": 122,
+    "imageUrl": "images/imgi_377_SV10_EN_122-2x.webp",
+    "tags": [["Team Rocket"], ["EX"]]
+  },
+  {
+    "name": "Team Rocket's Grimer",
+    "number": 123,
+    "imageUrl": "images/imgi_378_SV10_EN_123-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Muk",
+    "number": 124,
+    "imageUrl": "images/imgi_379_SV10_EN_124-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Koffing",
+    "number": 125,
+    "imageUrl": "images/imgi_380_SV10_EN_125-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Weezing",
+    "number": 126,
+    "imageUrl": "images/imgi_381_SV10_EN_126-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Murkrow",
+    "number": 127,
+    "imageUrl": "images/imgi_382_SV10_EN_127-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Sneasel",
+    "number": 128,
+    "imageUrl": "images/imgi_383_SV10_EN_128-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Cynthia's Spiritomb",
+    "number": 129,
+    "imageUrl": "images/imgi_384_SV10_EN_129-2x.webp",
+    "tags": [["Cynthia"]]
+  },
+  {
+    "name": "Marnie's Purrloin",
+    "number": 130,
+    "imageUrl": "images/imgi_385_SV10_EN_130-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Marnie's Liepard",
+    "number": 131,
+    "imageUrl": "images/imgi_386_SV10_EN_131-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Marnie's Scraggy",
+    "number": 132,
+    "imageUrl": "images/imgi_387_SV10_EN_132-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Marnie's Scrafty",
+    "number": 133,
+    "imageUrl": "images/imgi_388_SV10_EN_133-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Marnie's Impidimp",
+    "number": 134,
+    "imageUrl": "images/imgi_389_SV10_EN_134-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Marnie's Morgrem",
+    "number": 135,
+    "imageUrl": "images/imgi_390_SV10_EN_135-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Marnie's Grimmsnarl EX",
+    "number": 136,
+    "imageUrl": "images/imgi_391_SV10_EN_136-2x.webp",
+    "tags": [["Marnie"], ["EX"]]
+  },
+  {
+    "name": "Marnie's Morpeko",
+    "number": 137,
+    "imageUrl": "images/imgi_392_SV10_EN_137-2x.webp",
+    "tags": [["Marnie"]]
+  },
+  {
+    "name": "Arven's Maschiff",
+    "number": 138,
+    "imageUrl": "images/imgi_393_SV10_EN_138-2x.webp",
+    "tags": [["Arven"]]
+  },
+  {
+    "name": "Arven's Mabosstiff EX",
+    "number": 139,
+    "imageUrl": "images/imgi_394_SV10_EN_139-2x.webp",
+    "tags": [["Arven"], ["EX"]]
+  },
+  {
+    "name": "Forretress",
+    "number": 140,
+    "imageUrl": "images/imgi_395_SV10_EN_140-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Skarmory",
+    "number": 141,
+    "imageUrl": "images/imgi_396_SV10_EN_141-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Steven's Skarmory",
+    "number": 142,
+    "imageUrl": "images/imgi_397_SV10_EN_142-2x.webp",
+    "tags": [["Steven"]]
+  },
+  {
+    "name": "Steven's Beldum",
+    "number": 143,
+    "imageUrl": "images/imgi_398_SV10_EN_143-2x.webp",
+    "tags": [["Steven"]]
+  },
+  {
+    "name": "Steven's Metang",
+    "number": 144,
+    "imageUrl": "images/imgi_399_SV10_EN_144-2x.webp",
+    "tags": [["Steven"]]
+  },
+  {
+    "name": "Steven's Metagross EX",
+    "number": 145,
+    "imageUrl": "images/imgi_400_SV10_EN_145-2x.webp",
+    "tags": [["Steven"], ["EX"]]
+  },
+  {
+    "name": "Zamazenta",
+    "number": 146,
+    "imageUrl": "images/imgi_401_SV10_EN_146-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Team Rocket's Rattata",
+    "number": 147,
+    "imageUrl": "images/imgi_402_SV10_EN_147-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Raticate",
+    "number": 148,
+    "imageUrl": "images/imgi_403_SV10_EN_148-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Meowth",
+    "number": 149,
+    "imageUrl": "images/imgi_404_SV10_EN_149-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Persian EX",
+    "number": 150,
+    "imageUrl": "images/imgi_405_SV10_EN_150-2x.webp",
+    "tags": [["Team Rocket"], ["EX"]]
+  },
+  {
+    "name": "Kangaskhan",
+    "number": 151,
+    "imageUrl": "images/imgi_406_SV10_EN_151-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Tauros",
+    "number": 152,
+    "imageUrl": "images/imgi_407_SV10_EN_152-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Team Rocket's Porygon",
+    "number": 153,
+    "imageUrl": "images/imgi_408_SV10_EN_153-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Porygon2",
+    "number": 154,
+    "imageUrl": "images/imgi_409_SV10_EN_154-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Team Rocket's Porygon-Z",
+    "number": 155,
+    "imageUrl": "images/imgi_410_SV10_EN_155-2x.webp",
+    "tags": [["Team Rocket"]]
+  },
+  {
+    "name": "Taillow",
+    "number": 156,
+    "imageUrl": "images/imgi_411_SV10_EN_156-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Swellow",
+    "number": 157,
+    "imageUrl": "images/imgi_412_SV10_EN_157-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Arven's Skwovet",
+    "number": 158,
+    "imageUrl": "images/imgi_413_SV10_EN_158-2x.webp",
+    "tags": [["Arven"]]
+  },
+  {
+    "name": "Arven's Greedent",
+    "number": 159,
+    "imageUrl": "images/imgi_414_SV10_EN_159-2x.webp",
+    "tags": [["Arven"]]
+  },
+  {
+    "name": "Squawkabilly",
+    "number": 160,
+    "imageUrl": "images/imgi_415_SV10_EN_160-2x.webp",
+    "tags": []
+  },
+  {
+    "name": "Arven's Sandwich",
+    "number": 161,
+    "imageUrl": "images/imgi_416_SV10_EN_161-2x.webp",
+    "tags": [["Arven"], ["Trainer card"]]
+  },
+  {
+    "name": "Cynthia's Power Weight",
+    "number": 162,
+    "imageUrl": "images/imgi_417_SV10_EN_162-2x.webp",
+    "tags": [["Cynthia"], ["Trainer card"]]
+  },
+  {
+    "name": "Emcee's Hype",
+    "number": 163,
+    "imageUrl": "images/imgi_418_SV10_EN_163-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Energy Recycler",
+    "number": 164,
+    "imageUrl": "images/imgi_419_SV10_EN_164-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Ethan's Adventure",
+    "number": 165,
+    "imageUrl": "images/imgi_420_SV10_EN_165-2x.webp",
+    "tags": [["Ethan"], ["Trainer card"]]
+  },
+  {
+    "name": "Granite Cave",
+    "number": 166,
+    "imageUrl": "images/imgi_421_SV10_EN_166-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Judge",
+    "number": 167,
+    "imageUrl": "images/imgi_422_SV10_EN_167-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Sacred Ash",
+    "number": 168,
+    "imageUrl": "images/imgi_423_SV10_EN_168-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Spikemuth Gym",
+    "number": 169,
+    "imageUrl": "images/imgi_424_SV10_EN_169-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Archer",
+    "number": 170,
+    "imageUrl": "images/imgi_425_SV10_EN_170-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Ariana",
+    "number": 171,
+    "imageUrl": "images/imgi_426_SV10_EN_171-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Bother-Bot",
+    "number": 172,
+    "imageUrl": "images/imgi_427_SV10_EN_172-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Factory",
+    "number": 173,
+    "imageUrl": "images/imgi_428_SV10_EN_173-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Giovanni",
+    "number": 174,
+    "imageUrl": "images/imgi_429_SV10_EN_174-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Great Ball",
+    "number": 175,
+    "imageUrl": "images/imgi_430_SV10_EN_175-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Petrel",
+    "number": 176,
+    "imageUrl": "images/imgi_431_SV10_EN_176-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Proton",
+    "number": 177,
+    "imageUrl": "images/imgi_432_SV10_EN_177-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Transceiver",
+    "number": 178,
+    "imageUrl": "images/imgi_433_SV10_EN_178-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Venture Bomb",
+    "number": 179,
+    "imageUrl": "images/imgi_434_SV10_EN_179-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Watchtower",
+    "number": 180,
+    "imageUrl": "images/imgi_435_SV10_EN_180-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "TM Machine",
+    "number": 181,
+    "imageUrl": "images/imgi_436_SV10_EN_181-2x.webp",
+    "tags": [["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Energy",
+    "number": 182,
+    "imageUrl": "images/imgi_437_SV10_EN_182-2x.webp",
+    "tags": [["Team Rocket"], ["Trainer card"]]
+  },
+  {
+    "name": "Yanma",
+    "number": 183,
+    "imageUrl": "images/imgi_438_SV10_EN_183-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Cynthia's Roserade",
+    "number": 184,
+    "imageUrl": "images/imgi_439_SV10_EN_184-2x.webp",
+    "tags": [["Cynthia"], ["Special Art"]]
+  },
+  {
+    "name": "Shaymin",
+    "number": 185,
+    "imageUrl": "images/imgi_440_SV10_EN_185-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Crustle",
+    "number": 186,
+    "imageUrl": "images/imgi_441_SV10_EN_186-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Hydrapple",
+    "number": 187,
+    "imageUrl": "images/imgi_442_SV10_EN_187-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Spidops",
+    "number": 188,
+    "imageUrl": "images/imgi_443_SV10_EN_188-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Rapidash",
+    "number": 189,
+    "imageUrl": "images/imgi_444_SV10_EN_189-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Ethan's Typhlosion",
+    "number": 190,
+    "imageUrl": "images/imgi_445_SV10_EN_190-2x.webp",
+    "tags": [["Ethan"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Houndoom",
+    "number": 191,
+    "imageUrl": "images/imgi_446_SV10_EN_191-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Blaziken",
+    "number": 192,
+    "imageUrl": "images/imgi_447_SV10_EN_192-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Misty's Psyduck",
+    "number": 193,
+    "imageUrl": "images/imgi_448_SV10_EN_193-2x.webp",
+    "tags": [["Misty"], ["Special Art"]]
+  },
+  {
+    "name": "Misty's Lapras",
+    "number": 194,
+    "imageUrl": "images/imgi_449_SV10_EN_194-2x.webp",
+    "tags": [["Misty"], ["Special Art"]]
+  },
+  {
+    "name": "Clamperl",
+    "number": 195,
+    "imageUrl": "images/imgi_450_SV10_EN_195-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Electrike",
+    "number": 196,
+    "imageUrl": "images/imgi_451_SV10_EN_196-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Rotom",
+    "number": 197,
+    "imageUrl": "images/imgi_452_SV10_EN_197-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Orbeetle",
+    "number": 198,
+    "imageUrl": "images/imgi_453_SV10_EN_198-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Weezing",
+    "number": 199,
+    "imageUrl": "images/imgi_454_SV10_EN_199-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Murkrow",
+    "number": 200,
+    "imageUrl": "images/imgi_455_SV10_EN_200-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Zamazenta",
+    "number": 201,
+    "imageUrl": "images/imgi_456_SV10_EN_201-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Raticate",
+    "number": 202,
+    "imageUrl": "images/imgi_457_SV10_EN_202-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Meowth",
+    "number": 203,
+    "imageUrl": "images/imgi_458_SV10_EN_203-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Kangaskhan",
+    "number": 204,
+    "imageUrl": "images/imgi_459_SV10_EN_204-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Arven's Greedent",
+    "number": 205,
+    "imageUrl": "images/imgi_460_SV10_EN_205-2x.webp",
+    "tags": [["Special Art"], ["Arven"]]
+  },
+  {
+    "name": "Yanmega",
+    "number": 206,
+    "imageUrl": "images/imgi_461_SV10_EN_206-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Arboliva",
+    "number": 207,
+    "imageUrl": "images/imgi_462_SV10_EN_207-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Moltres",
+    "number": 208,
+    "imageUrl": "images/imgi_463_SV10_EN_208-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Ethan's Ho-Oh",
+    "number": 209,
+    "imageUrl": "images/imgi_464_SV10_EN_209-2x.webp",
+    "tags": [["Ethan"], ["Special Art"]]
+  },
+  {
+    "name": "Cetitan",
+    "number": 210,
+    "imageUrl": "images/imgi_465_SV10_EN_210-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Dondozo",
+    "number": 211,
+    "imageUrl": "images/imgi_466_SV10_EN_211-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Electivire",
+    "number": 212,
+    "imageUrl": "images/imgi_467_SV10_EN_212-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Mewtwo",
+    "number": 213,
+    "imageUrl": "images/imgi_468_SV10_EN_213-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Regirock",
+    "number": 214,
+    "imageUrl": "images/imgi_469_SV10_EN_214-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Cynthia's Garchomp",
+    "number": 215,
+    "imageUrl": "images/imgi_470_SV10_EN_215-2x.webp",
+    "tags": [["Cynthia"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Nidoking",
+    "number": 216,
+    "imageUrl": "images/imgi_471_SV10_EN_216-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Crobat",
+    "number": 217,
+    "imageUrl": "images/imgi_472_SV10_EN_217-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Arven's Mabosstiff",
+    "number": 218,
+    "imageUrl": "images/imgi_473_SV10_EN_218-2x.webp",
+    "tags": [["Arven"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Persian",
+    "number": 219,
+    "imageUrl": "images/imgi_474_SV10_EN_219-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Emcee's Hype",
+    "number": 220,
+    "imageUrl": "images/imgi_475_SV10_EN_220-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Ethan's Adventure",
+    "number": 221,
+    "imageUrl": "images/imgi_476_SV10_EN_221-2x.webp",
+    "tags": [["Ethan"], ["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Judge",
+    "number": 222,
+    "imageUrl": "images/imgi_477_SV10_EN_222-2x.webp",
+    "tags": [["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Archer",
+    "number": 223,
+    "imageUrl": "images/imgi_478_SV10_EN_223-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Ariana",
+    "number": 224,
+    "imageUrl": "images/imgi_479_SV10_EN_224-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Giovanni",
+    "number": 225,
+    "imageUrl": "images/imgi_480_SV10_EN_225-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Petrel",
+    "number": 226,
+    "imageUrl": "images/imgi_481_SV10_EN_226-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Team Rocket's Proton",
+    "number": 227,
+    "imageUrl": "images/imgi_482_SV10_EN_227-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Trainer card"]]
+  },
+  {
+    "name": "Yanmega",
+    "number": 228,
+    "imageUrl": "images/imgi_483_SV10_EN_228-2x.webp",
+    "tags": [["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Moltres",
+    "number": 229,
+    "imageUrl": "images/imgi_484_SV10_EN_229-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Ethan's Ho-Oh",
+    "number": 230,
+    "imageUrl": "images/imgi_485_SV10_EN_230-2x.webp",
+    "tags": [["Ethan"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Mewtwo",
+    "number": 231,
+    "imageUrl": "images/imgi_486_SV10_EN_231-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Cynthia's Garchomp",
+    "number": 232,
+    "imageUrl": "images/imgi_487_SV10_EN_232-2x.webp",
+    "tags": [["Cynthia"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Nidoking",
+    "number": 233,
+    "imageUrl": "images/imgi_488_SV10_EN_233-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Crobat",
+    "number": 234,
+    "imageUrl": "images/imgi_489_SV10_EN_234-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Arven's Mabosstiff",
+    "number": 235,
+    "imageUrl": "images/imgi_490_SV10_EN_235-2x.webp",
+    "tags": [["Arven"], ["Special Art"]]
+  },
+  {
+    "name": "Ethan's Adventure",
+    "number": 236,
+    "imageUrl": "images/imgi_491_SV10_EN_236-2x.webp",
+    "tags": [["Ethan"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Ariana",
+    "number": 237,
+    "imageUrl": "images/imgi_492_SV10_EN_237-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Team Rocket's Giovanni",
+    "number": 238,
+    "imageUrl": "images/imgi_493_SV10_EN_238-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"]]
+  },
+  {
+    "name": "Ethan's Ho-Oh",
+    "number": 239,
+    "imageUrl": "images/imgi_494_SV10_EN_239-2x.webp",
+    "tags": [["Ethan"], ["Special Art"], ["Hyper Rare"]]
+  },
+  {
+    "name": "Team Rocket's Mewtwo",
+    "number": 240,
+    "imageUrl": "images/imgi_495_SV10_EN_240-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Hyper Rare"]]
+  },
+  {
+    "name": "Cynthia's Garchomp",
+    "number": 241,
+    "imageUrl": "images/imgi_496_SV10_EN_241-2x.webp",
+    "tags": [["Cynthia"], ["Special Art"], ["Hyper Rare"]]
+  },
+  {
+    "name": "Team Rocket's Crobat",
+    "number": 242,
+    "imageUrl": "images/imgi_497_SV10_EN_242-2x.webp",
+    "tags": [["Team Rocket"], ["Special Art"], ["Hyper Rare"]]
+  },
+  {
+    "name": "Jamming Tower",
+    "number": 243,
+    "imageUrl": "images/imgi_498_SV10_EN_243-2x.webp",
+    "tags": [["Special Art"], ["Hyper Rare"]]
+  },
+  {
+    "name": "Levincia",
+    "number": 244,
+    "imageUrl": "images/imgi_499_SV10_EN_244-2x.webp",
+    "tags": [["Special Art"], ["Hyper Rare"]]
+  }
+]
