@@ -120,20 +120,6 @@ body {
   background: #2563eb;
 }
 
-.save-btn {
-  background: #059669 !important;
-  color: white !important;
-}
-
-.save-btn:hover {
-  background: #047857 !important;
-}
-
-.save-btn:disabled {
-  background: #6b7280 !important;
-  cursor: not-allowed !important;
-}
-
 .user-info {
   display: flex;
   align-items: center;
