@@ -48,8 +48,8 @@ build/
 tmp/
 temp/
 
-# Firebase config with real API keys
-firebase-config.js
+# Firebase config is safe to commit (web API keys are public)
+# firebase-config.js
 
 # Local development
 .cache/
