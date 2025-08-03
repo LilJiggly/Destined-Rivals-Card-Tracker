@@ -32,8 +32,11 @@ A modern, responsive web application for tracking your Pokemon card collection w
 
 ### 2. Configure the App
 
-1. Open `firebase-config.js`
-2. Replace the placeholder values with your actual Firebase configuration:
+1. Copy the template configuration file:
+   ```bash
+   cp firebase-config.template.js firebase-config.js
+   ```
+2. Open `firebase-config.js` and replace the placeholder values with your actual Firebase configuration:
 
 ```javascript
 export const firebaseConfig = {
@@ -45,6 +48,8 @@ export const firebaseConfig = {
   appId: "your-actual-app-id",
 };
 ```
+
+**Important**: The `firebase-config.js` file is ignored by git to keep your API keys secure. Never commit this file to version control.
 
 ### 3. Run the Application
 
@@ -90,7 +95,8 @@ export const firebaseConfig = {
 ├── index.html              # Main HTML file
 ├── styles.css              # All styling and responsive design
 ├── scripts.js              # JavaScript functionality and Firebase integration
-├── firebase-config.js      # Firebase configuration (customize this)
+├── firebase-config.js      # Firebase configuration (create from template)
+├── firebase-config.template.js # Template for Firebase config
 ├── cards.json              # Card data
 ├── generate_cards_json.py  # Script to generate card data
 └── images/                 # Card images

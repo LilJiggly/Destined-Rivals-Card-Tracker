@@ -48,8 +48,8 @@ build/
 tmp/
 temp/
 
-# Firebase (uncomment if you want to hide config - but it's safe to commit)
-# firebase-config.js
+# Firebase config with real API keys
+firebase-config.js
 
 # Local development
 .cache/
